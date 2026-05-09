@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OurMenu - Flavio Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Oswald:wght@400;500&family=Lato:wght@400;700&family=Bebas+Neue&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/OurMenu.css">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon-icon.png">
+
+</head>
+
+<body>
+
+    <div id="main-hero-area">
+        <header class="navbar">
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+          
+    
+            <div class="nav-left">
+                <a href="Home.html">HOME</a>
+                <a href="OurMenu.html" class="active">OUR MENU</a>
+                <a href="history.html">HISTORY</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+    
+            <div class="logo-area">
+                <img src="images/logo-regular (1).png" alt="logo">
+            </div>
+    
+            <div class="nav-right">
+                <div class="add-cart-logo" style="margin-right: 25px; cursor: pointer; position: relative; display: flex; align-items: center;">
+                    <i class="fa-solid fa-cart-shopping" style="font-size: 22px; color: #1a2a33;"></i>
+                    <!-- <span id="cart-count" class="cart-badge">0</span> -->
+                </div>
+                
+                <button class="btn-res">MAKE RESERVATION</button>
+            </div>
+        </header>
+    
+        <section class="hero-section">
+
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
+            <div class="hero-content">
+                <h3 class="cursive-text">Check out our</h3>
+                <h1 class="main-title">MENU</h1>
+            </div>
+        </section>
+    </div>
+    <!--  toggle  dishes details section -->
+
+    
+    <section class="menu-list-section">
+        <div class="menu-toggle-wrapper">
+            <span class="toggle-label active" id="label-main">MAIN COURSES</span>
+            <label class="switch">
+                <input type="checkbox" id="dish-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="toggle-label" id="label-side">SIDE DISHES</span>
+        </div>
+    
+        <div class="menu-grid" id="menu-container"></div>
+    </section>
+
+    <!--  deserts section and drink section  -->
+
+    <section class="menu-list-section new-section">
+        <div class="menu-toggle-wrapper">
+            <span class="toggle-label active" id="label-dessert">DESSERTS</span>
+            <label class="switch">
+                <input type="checkbox" id="dessert-toggle"> <span class="slider round"></span>
+            </label>
+            <span class="toggle-label" id="label-beverage">BEVERAGES</span>
+        </div>
+    
+        <div class="menu-grid" id="dessert-container"></div> 
+    </section>
+ 
+
+    <!--  Booking section  -->
+
+
+    <section class="booking-section">
+        <div class="booking-container">
+            <p class="cursive-text">Reservations</p>
+            <h2 class="booking-title">BOOK A TABLE</h2>
+
+            <form class="booking-form">
+                <div class="input-group">
+                    <input type="text" placeholder="NAME" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="tel" placeholder="PHONE" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="number" placeholder="NUMBER OF PERSONS" min="1">
+                </div>
+
+                <div class="input-group">
+                    <select name="day">
+                        <option value="" disabled selected>RESERVATION DAY</option>
+                        <option value="sunday">SUNDAY</option>
+                        <option value="monday">MONDAY</option>
+                        <option value="tuesday">TUESDAY</option>
+                        <option value="wednesday">WEDNESDAY</option>
+                        <option value="thursday">THURSDAY</option>
+                        <option value="friday">FRIDAY</option>
+                        <option value="saturday">SATURDAY</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <select name="hour">
+                        <option value="" disabled selected>HOUR</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">01:00 PM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                        <option value="17:00">05:00 PM</option>
+                        <option value="18:00">06:00 PM</option>
+                        <option value="19:00">07:00 PM</option>
+                        <option value="20:00">08:00 PM</option>
+                        <option value="21:00">09:00 PM</option>
+                        <option value="22:00">10:00 PM</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="book-btn">BOOK A TABLE</button>
+            </form>
+        </div>
+    </section>
+
+    <!--   footer section  -->
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="images/logo-regular (1).png" alt="logo">
+        </div>
+        <div class="footer-links">
+            <a href="Home.html">Home</a>
+            <a href="OurMenu.html"class="gold-link">Our Menu</a>
+            <a href="history.html" >History</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2025 Flavio Restaurant</p>
+            <p>Powered by Flavio Restaurant</p>
+        </div>
+    </footer>
+       
+    
+
+
+    <!-- llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->    
+    <section class="add-to-cart-section hide-add-cart-toggle">
+        <div class="shopping-cart-div-cross">
+            Shopping cart <div class="cross-button-atc">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+        <div class="card-section-of-addtocart">
+           
+
+            <div class="card-add-to-cart-section">
+                <div class="card-img-plus-quatitty-atc">
+                    <div class="img-atc-div"><img src="/src/product-m-jeans1-300x300.jpg" alt="" class="img-tag-atc"></div>
+                    <div class="name-quantity-card">
+                        <div class="name-product-atc">
+                                  Dark Brown Jeans
+                        </div>
+                        <div class="quantity-atc">
+                          <div class="minus-atc box-atc">-</div>
+                          <div class="cnt-quatity-atc box-atc">
+                            2
+                          </div>
+                          <div class="plus-atc box-atc">
+                            +
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cross-sign-plus-price">
+                    <div class="crosssign-atc">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </div>
+                    <div class="price-product-atc">
+                         $435.00
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
+
+            <div class="card-add-to-cart-section">
+                <div class="card-img-plus-quatitty-atc">
+                    <div class="img-atc-div"><img src="/src/product-m-jeans1-300x300.jpg" alt="" class="img-tag-atc"></div>
+                    <div class="name-quantity-card">
+                        <div class="name-product-atc">
+                                  Dark Brown Jeans
+                        </div>
+                        <div class="quantity-atc">
+                          <div class="minus-atc box-atc">-</div>
+                          <div class="cnt-quatity-atc box-atc">
+                            2
+                          </div>
+                          <div class="plus-atc box-atc">
+                            +
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cross-sign-plus-price">
+                    <div class="crosssign-atc">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </div>
+                    <div class="price-product-atc">
+                         $435.00
+                    </div>
+                </div>
+            </div>
+            <!-- lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
+        </div>
+          
+
+        <div class="subtotal-order-button-atc">
+            <div class="subtotal-atc">
+                <div class="subtotal-text-atc">
+                     Subtotal
+                </div>
+                <div class="subtoalprice-atc">
+                     $290.00
+                </div>
+            </div>
+            <div class="button-place-order">
+                <button class="button-tag-place-order">place order</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="javascript/OurMenu.js"></script>
+</body>
+
+</html>

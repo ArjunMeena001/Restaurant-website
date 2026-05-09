@@ -1,0 +1,502 @@
+ /* =========================================
+   1. GLOBAL RESET & BASICS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f9f7f2;
+    overflow-x: hidden;
+    
+}
+
+/* =========================================
+   2. HEADER, NAVBAR & HERO
+   ========================================= */
+#main-hero-area {
+    width: 100%;
+    background-image: url("../images/bg-00011 (2).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 3%;
+    width: 100%;
+    z-index: 1000;
+    margin-bottom: -60px;
+}
+
+.nav-left {
+    display: flex;
+    gap: 25px;
+    flex: 1;
+}
+
+.nav-left a {
+    position: relative;
+    text-decoration: none;
+    color: #1a2a33;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    padding: 30px 0;
+    transition: 1s;
+}
+
+.nav-left a.active {
+    color: #c18b60;
+}
+
+.nav-left a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #c18b60;
+    transition: 0.3s;
+}
+
+.nav-left a:hover::before {
+    width: 100%;
+    
+}
+.nav-left a:hover {
+    color: #c18b60;
+}
+
+.logo-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-area img {
+    height: 90px;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-res {
+    background-color: #c7823d;
+    color: white;
+    border: none;
+    padding: 18px 32px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.nav-right .btn-res:hover {
+    background-color: #80501d;
+    transition: 2s;
+}
+
+.hero-section {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.cursive-text {
+    font-family: 'Alex Brush', cursive;
+    color: rgb(169, 121, 89);
+    font-size: 41px;
+    font-weight: 500;
+    margin-bottom: -40px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 137px;
+    font-weight: 500;
+    color: rgb(20, 54, 66);
+    letter-spacing: 45px;
+    margin-left: 15px;
+}
+
+.menu-checkbox,
+.hamburger {
+    display: none;
+}
+
+/* --- Responsive Code for Navbar & Hero --- */
+@media (max-width: 992px) {
+
+    /* navbar center align — logo only */
+    .navbar {
+        position: relative;
+        padding: 15px 30px;
+        justify-content: center;
+    }
+
+    /* hide reservation button */
+    .nav-right {
+        display: none;
+    }
+
+    /* ===== MENU OVERLAY LIKE FLAVIO DEMO ===== */
+    .nav-left {
+        position: absolute;
+        top: 140px;              /* hamburger ke neeche */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;              /* menu container width */
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 0;
+        border-radius: 6px;
+        gap: 25px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    }
+
+    .menu-checkbox:checked ~ .nav-left {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* ===== HAMBURGER NEXT TO LOGO AREA ===== */
+    .hero-section {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        position: absolute;
+        top: 70px;         /* adjust: 60-75 is perfect */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+        background: #1a2a33;
+    }
+
+    /* hero title responsive */
+    .main-title {
+        font-size: 60px;
+        letter-spacing: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        
+        /* Positioning (Logo ke neeche center mein) */
+        position: absolute;
+        top: 85px; /* Thoda adjust kiya taki logo se chipke nahi */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+
+        /* Circle Styling */
+        width: 50px;
+        height: 50px;
+        background-color: #c18b60; /* Brown Color */
+        border-radius: 50%; /* Golakar shape */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Halki si shadow */
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .hamburger:hover {
+        background-color: #a06e45; /* Hover pr thoda dark */
+    }
+
+    .hamburger span {
+        width: 22px; /* Lines ki choudai adjust ki circle ke hisab se */
+        height: 2px;
+        background-color: #ffffff; /* White Color Lines */
+        border-radius: 2px;
+    }
+}
+
+
+/* =========================================
+   3. DETAILS SECTION (Second Page)
+   ========================================= */
+.details-section {
+    padding: 0;
+    background-color: #dbdad8;
+    margin-top: -135px;
+    display: flex;
+    justify-content: center;
+}
+
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    gap: 40px;
+    border-top: 1px solid #d0cdcd;
+    border-bottom: 1px solid #dbdad8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: stretch;
+}
+
+.info-box {
+    flex: 1;
+    background-color: #f9f7f2;
+    padding: 60px 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.sub-heading {
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(20, 54, 66);
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0ddd5;
+    padding-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+    color: rgb(64, 97, 99);
+    border-bottom: 1px solid #e0ddd5;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.gold {
+    color: rgb(169, 121, 89);
+    text-align: right;
+}
+
+.weight {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.text-right {
+    text-align: right;
+    line-height: 1.6;
+    display: block;
+}
+
+.spacer {
+    margin-top: 50px;
+}
+
+.form-wrapper {
+    flex: 2.2;
+    position: relative;
+}
+
+.side-img {
+    width: 100%;
+    height: 100%;
+    min-height: 750px;
+    object-fit: cover;
+}
+
+.overlap-form {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #1a2a33;
+    padding: 30px 30px;
+    width: 55%;
+    color: white;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.overlap-form h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+.overlap-form input,
+.overlap-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    outline: none;
+}
+
+.overlap-form button {
+    background-color: #a67c52;
+    color: white;
+    border: none;
+    padding: 18px;
+    width: 50%;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.overlap-form button:hover {
+    color: rgba(227, 213, 198, 0.8);
+    transition: 0.5s;
+    background-color: rgba(138, 101, 65, 1);
+}
+
+.overlap-form input:focus,
+.overlap-form textarea:focus {
+    border-bottom: 1px solid #ffffff !important;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.overlap-form input::placeholder,
+.overlap-form textarea::placeholder {
+    color: #ffffff !important;
+    opacity: 1;
+}
+
+.map-section {
+    padding-bottom: 5px;
+    border: 2px solid rgb(220, 221, 221);
+}
+
+/* --- Responsive Code for Details Section --- */
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .form-wrapper {
+        width: 100%;
+    }
+
+    .overlap-form {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .side-img {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   4. FOOTER SECTION
+   ========================================= */
+.footer {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.footer-logo img {
+    height: 70px;
+    margin-bottom: 40px;
+}
+
+.footer-links {
+    margin-bottom: 30px;
+    display: flex;            /* Flexbox use kiya for alignment */
+    justify-content: center;  /* Center mein rakhne ke liye */
+    flex-wrap: wrap;          /* Taki screen choti hone par links niche aa sakein */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: rgb(64, 97, 99);
+    margin: 0 20px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.gold-link {
+    color: #a67c52 !important;
+}
+
+.social-icons {
+    margin-bottom: 40px;
+}
+
+.social-icons a {
+    color: #a67c52;
+    font-size: 20px;
+    margin: 0 15px;
+}
+
+.copyright {
+    color: rgb(64, 97, 99);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 2.3;
+    border-top: 1px solid rgb(200, 207, 207);
+    padding-top: 30px;
+}
+
+.footer-links a:hover {
+    color: rgb(169, 121, 89);
+    transition: 0.2s;
+}
+
+.social-icons a :hover {
+    color: rgb(64, 97, 99);
+    transition: 0.03s;
+}
+
+/* --- Responsive Code for Footer --- */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column; 
+        align-items: center;    
+    }
+
+    .footer-links a {
+        margin: 10px 0;        
+        width: 100%;           
+    }
+
+    .footer {
+        padding: 50px 0;       
+    }
+}

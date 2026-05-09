@@ -1,0 +1,993 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    
+    background-color: #f9f7f2;
+    overflow-x: hidden;
+}
+
+#main-hero-area {
+    width: 100%;
+    background-image: url("../images/bg-00011 (2).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 3%;
+    width: 100%;
+    z-index: 1000;
+    margin-bottom: -60px;
+}
+
+.nav-left {
+    display: flex;
+    gap: 25px;
+    flex: 1;
+}
+
+.nav-left a {
+    position: relative;
+    text-decoration: none;
+    color: #1a2a33;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    padding: 30px 0;
+    transition: 1s;
+}
+
+.nav-left a.active {
+    color: #c18b60;
+}
+
+.nav-left a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #c18b60;
+    transition: 0.3s;
+}
+
+.nav-left a:hover::before {
+    width: 100%;
+}
+.nav-left a:hover {
+    color: #c18b60;
+}
+
+.logo-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-area img {
+    height: 90px;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-res {
+    background-color: #c7823d;
+    color: white;
+    border: none;
+    padding: 18px 32px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 13px;
+}
+.nav-right .btn-res:hover{
+    background-color: #80501d;
+    transition: 2s;
+}
+
+.hero-section {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px ;
+}
+.cursive-text {
+    font-family: 'Alex Brush', cursive;
+    color: rgb(169, 121, 89);
+    font-size: 41px;
+    font-weight: 500;
+    margin-bottom: -40px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.main-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 137px;
+    font-weight: 500;
+    color: rgb(20, 54, 66);
+    letter-spacing: 45px;
+    margin-left: 15px;
+}
+
+
+/* fonder section */
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1500px;
+    margin: 2px;
+    padding: 0;
+    border: 1px solid rgb(177, 176, 176);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+
+    border: 1px solid rgb(177, 176, 176);
+    background-color: rgb(216, 206, 206);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+    margin-top: -100px;
+}
+
+
+.text-section {
+    padding: 80px 60px;
+    position: relative;
+    background: linear-gradient(135deg, #fdfcfb 0%, #f7f4ef 100%);
+}
+
+.text-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #d4c5b0 20%, #d4c5b0 80%, transparent);
+}
+
+.subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #b8906e;
+    margin-bottom: 30px;
+    font-weight: 300;
+
+}
+
+
+.founder-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 0.9;
+    color: #0d2639;
+    margin-bottom: 40px;
+    letter-spacing: -2px;
+
+}
+
+
+
+.description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 60px;
+
+}
+
+.quote-box {
+    border-top: 2px solid #b8906e;
+    padding-top: 30px;
+    margin-top: 40px;
+
+}
+
+.quote-text {
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.signature {
+    margin-top: 20px;
+    height: auto;
+    width: 150px;
+    opacity: 0.9;
+}
+
+.signature img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.8);
+}
+
+.image-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(216, 206, 206);
+    overflow: visible;
+    border: 1px solid rgb(198, 189, 189);
+    padding: 20px;
+
+}
+
+
+.building-img {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    left: 1px;
+
+    width: 100%;
+    height: 99%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.8) contrast(1.2) sepia(30%);
+
+}
+
+
+.portrait-img {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 65%;
+    height: 90%;
+    object-fit: cover;
+    z-index: 2;
+    filter: grayscale(100%) contrast(1.1);
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
+}
+/* 
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 2fr;
+    }
+
+    .image-section {
+        min-height: 500px;
+    }
+
+    .floating-btn {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-section {
+        padding: 50px 30px;
+    }
+
+    .main-title {
+        font-size: 48px;
+    }
+
+    .image-section {
+        grid-template-columns: 1fr;
+        min-height: 600px;
+    }
+} */
+@media (max-width: 768px) {
+    /* Main Grid Fix */
+    .content-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0px !important; /* Gap khatam kiya taki images section se chipki rahein */
+    }
+
+    /* 1. Image Container Fix */
+    .image-section {
+        order: 2 !important;
+        width: 100% !important;
+        height: 450px !important; /* Ek fixed height di taki portrait andar rahe */
+        margin-top: 20px !important;
+        position: relative !important;
+        overflow: hidden !important; /* Isse portrait bahar nahi nikal payegi */
+        background-color: #f7f4ef; /* Background match karne ke liye */
+    }
+
+    /* 2. Building Background Img Fix */
+    .building-img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* Building puri area cover karegi */
+        z-index: 1 !important;
+    }
+
+    /* 3. Portrait (Founder) Img Fix */
+    .portrait-img {
+        position: absolute !important;
+        bottom: 0 !important; /* Section ke bottom se chipka diya */
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* Bilkul center mein lane ke liye */
+        width: 85% !important; /* Size control ki taki section ke andar fit ho */
+        height: 90% !important; /* Height limit ki taki upar se na nikle */
+        object-fit: contain !important; /* Image kate na aur puri dikhe */
+        z-index: 2 !important;
+        box-shadow: none !important; /* Mobile par clean look ke liye shadow hatayi */
+    }
+
+    .text-section {
+        order: 1 !important;
+        padding: 40px 25px !important;
+    }
+}
+
+
+
+/*  History  and jorney section  */
+/* ----------------------------------------------------------------------------------------------------------- */
+
+
+/* --- Base Section --- */
+.timeline-section {
+    background-color: #f4efe1;
+    padding: 100px 0 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Main Flex Wrapper --- */
+.timeline-main-wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+ 
+.timeline-sidebar {
+    width: 40%; 
+    padding-left: 50px;
+    
+    margin-top: 420px; 
+}
+
+.how-it-started-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #143642;
+    
+    border-top: 1px solid rgba(0, 0, 0); 
+    display: inline-block;
+    width: 100%;
+    max-width: 400px; 
+    padding-top: 20px;
+    text-transform: uppercase;
+}
+
+.timeline-right-content {
+    width: 80%;
+    position: relative;
+}
+
+.timeline-header-container {
+    width: 100%; 
+    margin: 0 0 80px 0;
+    padding: 0;
+    text-align: left;
+}
+
+.header-cursive {
+    font-family: 'Alex Brush', cursive;
+    color: #c18b60;
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.header-main-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 68px; 
+    line-height: 89px;
+    color: #143642;
+    letter-spacing: 8px;
+    font-weight: 500;
+    max-width: 950px; 
+    text-transform: uppercase;
+}
+
+/* --- Timeline Container --- */
+
+.timeline-container {
+    width: 100%; 
+    position: relative;
+    padding-top: 20px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e0ddd5;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-progress {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    background: #c18b60;
+    transform: translateX(-50%);
+    z-index: 2;
+    height: 0;
+}
+
+/* Items Zig-Zag */
+.timeline-item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    z-index: 3;
+}
+
+
+.timeline-item.left { justify-content: flex-start; }
+.timeline-item.right { justify-content: flex-end; }
+
+/* Box Styling */
+.timeline-content {
+    background: #ffffff;
+    padding: 50px;
+    width: 46%; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+    position: relative;
+    border-radius: 2px;
+}
+
+.timeline-title {
+    font-family: "Bebas Neue", display;
+    font-size: 16px;    
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #143642;
+    font-weight: 500;
+}
+
+.timeline-text {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;    
+    color: #406163;
+}
+
+.timeline-item.left .timeline-content { margin-left: 10px; text-align: right; }
+.timeline-item.right .timeline-content { margin-right: 10px; text-align: left; }
+
+/* Tipki Arrow */
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 16px; height: 16px;
+    background: #ffffff;
+    transform: translateY(-50%) rotate(45deg);
+    z-index: -1;
+}
+.timeline-item.left .timeline-content::after { right: -8px; }
+.timeline-item.right .timeline-content::after { left: -8px; }
+
+/* Dot & Dates */
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px; height: 12px;
+    background: #e0ddd5;
+    border-radius: 50%;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.timeline-dot.active { background: #c18b60; box-shadow: 0 0 0 4px rgba(193, 139, 96, 0.2); }
+
+.timeline-date-label {
+    position: absolute;
+    font-family: 'Oswald', sans-serif;
+    color: #d1cfc7;
+    font-size: 15px;
+    transition: 0.4s;
+    white-space: nowrap;
+}
+
+.timeline-item.active-date .timeline-date-label { color: #c18b60 !important; }
+.timeline-item.left .timeline-date-label { left: calc(50% + 35px); }
+.timeline-item.right .timeline-date-label { right: calc(50% + 35px); }
+
+/* Responsive Settings */
+@media (max-width: 1024px) {
+    .timeline-main-wrapper { flex-direction: column; }
+    .timeline-sidebar { width: 100%; padding: 20px; margin-top: 0; }
+    .timeline-right-content { width: 100%; }
+    .header-main-title { font-size: 45px; }
+    .timeline-content { width: 42%; }
+}
+@media (max-width: 1024px) {
+    /* 1. Timeline Line aur Progress ko Left shift kiya */
+    .timeline-line, .timeline-progress {
+        left: 20px !important;
+        transform: none !important;
+    }
+
+    .timeline-right-content {
+        padding-left: 20px !important; /* Line ke liye base space */
+    }
+
+    .timeline-item {
+        display: flex !important;
+        flex-direction: column !important; /* Vertical stacking */
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        padding-left: 45px !important; /* Line se box ka gap */
+        margin-bottom: 50px !important;
+        position: relative;
+    }
+
+    /* 2. Content Box Styling */
+    .timeline-content {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 25px !important;
+        order: 2; /* Date ke niche aane ke liye */
+        text-align: left !important;
+    }
+
+    /* 3. Dates ko Box ke TOP par shift kiya */
+    .timeline-date-label {
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        bottom: auto !important; /* Purani bottom property reset */
+        display: block !important;
+        margin-bottom: 12px !important; /* Box se thoda gap */
+        order: 1; /* Box se PEHLE (upar) dikhne ke liye */
+        font-size: 14px !important;
+        font-weight: 700;
+        color: #d1cfc7; /* Default light color */
+        transition: 0.3s ease;
+        text-transform: uppercase;
+    }
+
+    /* 4. Active State: Jab line yahan pahuche tab dark (brown) ho jaye */
+    .timeline-item.active-date .timeline-date-label {
+        color: #c18b60 !important;
+    }
+
+    /* 5. Timeline Dot Fix */
+    .timeline-dot {
+        left: 20px !important;
+        top: 25px !important; /* Date ke bilkul samne align kiya */
+        transform: translate(-50%, -50%) !important;
+    }
+
+    /* 6. Arrow (Teer) ko Dot ke samne set kiya */
+    .timeline-content::after {
+        left: -8px !important;
+        right: auto !important;
+        top: 20px !important; 
+        transform: rotate(45deg) !important;
+    }
+
+    .header-main-title {
+        font-size: 35px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------- */
+/*  Booking section  */
+
+.booking-section {
+    position: relative;
+    padding: 60px 0;
+
+    background-image: url("../images/bg-0008.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.booking-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.booking-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 68px;
+    letter-spacing: 10px;
+    color: rgb(20, 54, 66);
+    font-weight: 500;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group input,
+.input-group select {
+    width: 75%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    outline: none;
+    color: rgb(20, 54, 66);
+    appearance: none;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-bottom: 1px solid rgb(169, 121, 89) !important;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input,
+.input-group select {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+.input-group select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+}
+
+.input-group ::placeholder {
+    color: rgb(20, 54, 66) !important;
+    font-weight: 500;
+
+}
+
+.book-btn {
+    background-color: #a67c52;
+    color: white;
+    border: none;
+    padding: 18px 45px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    width: fit-content;
+    margin: 10px auto 0;
+    transition: 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #8b6643;
+}
+
+/* Tablet aur Mobile ke liye (992px se niche) */
+@media (max-width: 992px) {
+
+    .booking-title {
+        font-size: 50px;
+        letter-spacing: 5px; 
+    }
+
+    .input-group input, 
+    .input-group select {
+        width: 90%; 
+    }
+}
+
+/* Chhote Mobile ke liye (600px se niche) */
+@media (max-width: 600px) {
+    .booking-section {
+        padding: 40px 0;
+        background-attachment: scroll; 
+    }
+
+    .booking-title {
+        font-size: 35px;
+        letter-spacing: 3px;
+        line-height: 1.2;
+    }
+
+    .cursive-text {
+        font-size: 30px; 
+    }
+
+    .input-group input, 
+    .input-group select {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .book-btn {
+        width: 100%; 
+        padding: 15px 0;
+    }
+
+}
+/* footer section  */
+
+
+.footer {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.footer-logo img {
+    height: 70px;
+    margin-bottom: 40px;
+}
+
+.footer-links {
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: rgb(64, 97, 99);
+    margin: 0 20px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.gold-link {
+    color: #a67c52 !important;
+}
+
+.social-icons {
+    margin-bottom: 40px;
+}
+
+.social-icons a {
+    color: #a67c52;
+    font-size: 20px;
+    margin: 0 15px;
+}
+
+.copyright {
+    color:  rgb(64, 97, 99);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 2.3;
+    border-top: 1px solid rgb(200, 207, 207);
+     padding-top: 30px;
+}
+
+.menu-checkbox,
+.hamburger {
+    display: none;
+}
+.footer-links a:hover {
+    color: rgb(169, 121, 89);
+    transition: 0.2s; 
+}
+.social-icons a :hover{
+    color: rgb(64, 97, 99);
+    transition: 0.03s ;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* ================= MOBILE NAVBAR + HERO HAMBURGER ================= */
+@media (max-width: 992px) {
+
+    /* navbar center align — logo only */
+    .navbar {
+        position: relative;
+        padding: 15px 30px;
+        justify-content: center;
+    }
+
+    /* hide reservation button */
+    .nav-right {
+        display: none;
+    }
+
+    /* ===== MENU OVERLAY LIKE FLAVIO DEMO ===== */
+    .nav-left {
+        position: absolute;
+        top: 140px;               /* hamburger ke neeche */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;               /* menu container width */
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 0;
+        border-radius: 6px;
+        gap: 25px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    }
+
+    .menu-checkbox:checked ~ .nav-left {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* ===== HAMBURGER NEXT TO LOGO AREA ===== */
+    .hero-section {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        position: absolute;
+        top: 70px;          /* adjust: 60-75 is perfect */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+        background: #1a2a33;
+    }
+
+    /* hero title responsive */
+    .main-title {
+        font-size: 60px;
+        letter-spacing: 15px;
+    }
+
+    /* other responsive elements */
+    .content-wrapper { flex-direction: column; }
+    .form-wrapper { width: 100%; }
+    .overlap-form {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .side-img { display: none; }
+}
+
+
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        
+        /* Positioning (Logo ke neeche center mein) */
+        position: absolute;
+        top: 85px; /* Thoda adjust kiya taki logo se chipke nahi */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+
+        /* Circle Styling */
+        width: 50px;
+        height: 50px;
+        background-color: #c18b60; /* Brown Color */
+        border-radius: 50%; /* Golakar shape */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Halki si shadow */
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .hamburger:hover {
+        background-color: #a06e45; /* Hover pr thoda dark */
+    }
+
+    .hamburger span {
+        width: 22px; /* Lines ki choudai adjust ki circle ke hisab se */
+        height: 2px;
+        background-color: #ffffff; /* White Color Lines */
+        border-radius: 2px;
+    }
+}
+/*  footer responsiveness */
+
+/* --- DEFAULT (DESKTOP) --- */
+.footer {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.footer-logo img {
+    height: 70px;
+    margin-bottom: 40px;
+}
+
+.footer-links {
+    margin-bottom: 30px;
+    display: flex;             /* Flexbox use kiya for alignment */
+    justify-content: center;   /* Center mein rakhne ke liye */
+    flex-wrap: wrap;           /* Taki screen choti hone par links niche aa sakein */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: rgb(64, 97, 99);
+    margin: 0 20px;            
+    font-weight: 500;
+    font-size: 15px;
+}
+ 
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column; 
+        align-items: center;    
+    }
+
+    .footer-links a {
+        margin: 10px 0;        
+        width: 100%;           
+    }
+
+    .footer {
+        padding: 50px 0;       
+    }
+}

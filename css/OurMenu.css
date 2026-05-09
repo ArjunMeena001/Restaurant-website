@@ -1,0 +1,861 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+
+    background-color: #f9f7f2;
+    overflow-x: hidden;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+
+/* =========================================
+   2. HEADER, NAVBAR & HERO
+   ========================================= */
+
+#main-hero-area {
+    width: 100%;
+    background-image: url("../images/bg-00011 (2).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 3%;
+    width: 100%;
+    z-index: 1000;
+    margin-bottom: -60px;
+}
+
+.nav-left {
+    display: flex;
+    gap: 25px;
+    flex: 1;
+}
+
+.nav-left a {
+    position: relative;
+    text-decoration: none;
+    color: #1a2a33;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    padding: 30px 0;
+    transition: 1s;
+}
+
+.nav-left a.active {
+    color: #c18b60;
+}
+
+.nav-left a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #c18b60;
+    transition: 0.3s;
+}
+
+.nav-left a:hover::before {
+    width: 100%;
+}
+.nav-left a:hover {
+    color: #c18b60;
+}
+
+.logo-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-area img {
+    height: 90px;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-res {
+    background-color: #c7823d;
+    color: white;
+    border: none;
+    padding: 18px 32px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.nav-right .btn-res:hover {
+    background-color: #80501d;
+    transition: 2s;
+}
+
+.hero-section {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.cursive-text {
+    font-family: 'Alex Brush', cursive;
+    color: rgb(169, 121, 89);
+    font-size: 41px;
+    font-weight: 500;
+    margin-bottom: -40px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 137px;
+    font-weight: 500;
+    color: rgb(20, 54, 66);
+    letter-spacing: 45px;
+    margin-left: 15px;
+}
+
+.menu-checkbox,
+.hamburger {
+    display: none;
+}
+
+/* --- Responsive Code for Navbar & Hero --- */
+@media (max-width: 992px) {
+
+    /* navbar center align — logo only */
+    .navbar {
+        position: relative;
+        padding: 15px 30px;
+        justify-content: center;
+    }
+
+    /* hide reservation button */
+    .nav-right {
+        display: none;
+    }
+
+    /* ===== MENU OVERLAY LIKE FLAVIO DEMO ===== */
+    .nav-left {
+        position: absolute;
+        top: 140px;              /* hamburger ke neeche */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;              /* menu container width */
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 0;
+        border-radius: 6px;
+        gap: 25px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    }
+
+    .menu-checkbox:checked ~ .nav-left {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* ===== HAMBURGER NEXT TO LOGO AREA ===== */
+    .hero-section {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        position: absolute;
+        top: 70px;         /* adjust: 60-75 is perfect */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+        background: #1a2a33;
+    }
+
+    /* hero title responsive */
+    .main-title {
+        font-size: 60px;
+        letter-spacing: 15px;
+    }
+}
+
+/* --- Hamburger Button Design (Image Jaisa) --- */
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        
+        /* Positioning (Logo ke neeche center mein) */
+        position: absolute;
+        top: 85px; /* Thoda adjust kiya taki logo se chipke nahi */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+
+        /* Circle Styling */
+        width: 50px;
+        height: 50px;
+        background-color: #c18b60; /* Brown Color */
+        border-radius: 50%; /* Golakar shape */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Halki si shadow */
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .hamburger:hover {
+        background-color: #a06e45; /* Hover pr thoda dark */
+    }
+
+    .hamburger span {
+        width: 22px; /* Lines ki choudai adjust ki circle ke hisab se */
+        height: 2px;
+        background-color: #ffffff; /* White Color Lines */
+        border-radius: 2px;
+    }
+}
+/* toggle and disshhes section */
+/* ------------------------------------------------------------------------------------------------ */
+ 
+
+/* --- Global Menu Section Styling --- */
+.menu-list-section {
+    padding: 90px 6%;
+    background-color: #ffffff;
+    text-align: center;
+    border-top: 1px solid rgb(168, 159, 159);
+}
+
+/* Background for the second (Dessert) section */
+.new-section {
+    background-color: #f4efe1 !important;
+}
+
+/* --- Toggle Switch Styling --- */
+.menu-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.toggle-label {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 32px;
+    color: #d1cfc7;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+/* Active label color for both sections */
+.toggle-label.active { 
+    color: #143642 !important; 
+}
+
+.switch { position: relative; display: inline-block; width: 64px; height: 32px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #d3d0c8; transition: .4s; border-radius: 34px;
+}
+.slider:before {
+    position: absolute; content: ""; height: 24px; width: 24px;
+    left: 4px; bottom: 4px; background-color: #b68f41; transition: .4s; border-radius: 50%;
+}
+input:checked + .slider:before { transform: translateX(32px); }
+
+/* --- Menu Grid & Items --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 80px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.menu-item { 
+    display: flex; 
+    align-items: flex-start;
+    gap: 25px; 
+}
+
+.dish-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.dish-info {
+    flex-grow: 1;
+}
+
+/* --- Dotted Line Header Fix --- */
+.dish-header-wrapper {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 12px;
+}
+
+.dish-name { 
+    font-family: 'Bebas Neue', cursive; 
+    font-size: 24px; 
+    color: #c18b60; 
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+
+/* Dots div jo Name aur Price ke beech ki jagah bharega */
+.dish-dots {
+    flex-grow: 1;
+    border-bottom: 2px dotted #ccc;
+    margin: 0 12px;
+    height: 12px;
+    position: relative;
+    top: -4px; /* Dots ki alignment fix karne ke liye */
+}
+
+.dish-price { 
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px; 
+    font-weight: 700; 
+    color: #143642; 
+}
+
+.dish-desc { 
+    font-family: 'Lato', sans-serif;
+    font-size: 15px; 
+    color: #406163; 
+    text-align: left; 
+    line-height: 28px;
+    max-width: 320px;
+}
+
+.add-to-cart-btn {
+    display: block;
+    margin-top: 12px;
+    padding: 6px 16px;
+    background-color: #143642; /* Dark blue theme color */
+    color: white;
+    border: none;
+    font-family: 'Bebas Neue', cursive; /* Aapka heading font */
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: 0.3s background;
+}
+.add-cart-logo i {
+    font-size: 22px;
+    color: #1a2a33;
+    padding: 6px;              
+    border-radius: 60%;        
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-cart-logo:hover i {
+    background-color: #b68f41; /* Gold color on hover */
+    color: #fff;
+}
+
+
+/* Mobile check: Agar screen choti ho toh button center ho jaye */
+@media (max-width: 992px) {
+    .add-to-cart-btn {
+        margin: 12px auto 0;
+    }
+}
+
+/* Responsive adjustment */
+@media (max-width: 992px) {
+    .menu-grid { grid-template-columns: 1fr; gap: 40px; }
+    .menu-item { flex-direction: column; align-items: center; text-align: center; }
+    .dish-dots { display: none; } 
+    .dish-desc { text-align: center; margin: 0 auto; }
+}
+
+/* --- Tablet View (iPad Jaisa - List Style) --- */
+@media (max-width: 992px) {
+    /* Grid ko 1 column banayenge, lekin layout row rakhenge */
+    .menu-grid { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+        padding: 0 40px; /* Side me thodi jagah */
+    }
+
+    .menu-item { 
+        flex-direction: row; /* Tablet pr Image Left, Text Right rahega */
+        align-items: center; 
+        text-align: left; /* Text left align rahega */
+        border-bottom: 1px dashed #e0e0e0; /* Niche line separation ke liye */
+        padding-bottom: 20px;
+    }
+
+    .dish-img {
+        width: 100px; /* Tablet pr image size */
+        height: 100px;
+        margin-right: 20px; /* Image aur text ke beech gap */
+        margin-bottom: 0; /* Neeche ka gap hataya */
+    }
+
+    .dish-header-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .dish-name {
+        font-size: 22px;
+    }
+
+    .dish-desc {
+        text-align: left; /* Description left align */
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .dish-dots {
+        display: block; /* Tablet pr dots wapis dikhayenge */
+        flex-grow: 1;
+        margin: 0 15px;
+        border-bottom: 2px dotted #ccc;
+    }
+
+    .add-to-cart-btn {
+        margin: 0; /* Button margin reset */
+        margin-left: auto; /* Button ko right side push krne ke liye (optional) */
+    }
+}
+
+/* --- Mobile View (Phone Jaisa - Center Stack) --- */
+@media (max-width: 650px) {
+    .menu-grid {
+        padding: 0 15px;
+    }
+
+    .menu-item {
+        flex-direction: column; /* Phone pr upar-neeche */
+        text-align: center;
+        border-bottom: none;
+    }
+
+    .dish-img {
+        width: 140px;
+        height: 140px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .dish-header-wrapper {
+        flex-direction: column; /* Name upar, Price neeche */
+        gap: 5px;
+    }
+
+    .dish-dots {
+        display: none; /* Phone pr dots acche nahi lagte */
+    }
+
+    .dish-desc {
+        text-align: center;
+    }
+    
+    .add-to-cart-btn {
+        margin: 10px auto 0; /* Button center */
+    }
+}
+
+
+/* -------------------------------------------------------------------------------------------- */
+/*  Booking section  */
+
+.booking-section {
+    position: relative;
+    padding: 60px 0;
+
+    background-image: url("../images/bg-0008.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.booking-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.booking-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 68px;
+    letter-spacing: 10px;
+    color: rgb(20, 54, 66);
+    font-weight: 500;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group input,
+.input-group select {
+    width: 75%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    outline: none;
+    color: rgb(20, 54, 66);
+    appearance: none;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-bottom: 1px solid rgb(169, 121, 89) ;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input,
+.input-group select {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+.input-group select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+}
+
+.input-group ::placeholder {
+    color: rgb(20, 54, 66) ;
+    font-weight: 500;
+
+}
+
+.book-btn {
+    background-color: #a67c52;
+    color: white;
+    border: none;
+    padding: 18px 45px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    width: fit-content;
+    margin: 10px auto 0;
+    transition: 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #8b6643;
+}
+
+/* Tablet aur Mobile ke liye (992px se niche) */
+@media (max-width: 992px) {
+    .booking-title {
+        font-size: 50px;
+        letter-spacing: 5px; 
+    }
+
+    .input-group input, 
+    .input-group select {
+        width: 90%; 
+    }
+}
+
+/* Chhote Mobile ke liye (600px se niche) */
+@media (max-width: 600px) {
+    .booking-section {
+        padding: 40px 0;
+        background-attachment: scroll; 
+    }
+
+    .booking-title {
+        font-size: 35px;
+        letter-spacing: 3px;
+        line-height: 1.2;
+    }
+
+    .cursive-text {
+        font-size: 30px; 
+    }
+
+    .input-group input, 
+    .input-group select {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .book-btn {
+        width: 100%; 
+        padding: 15px 0;
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------ */
+
+
+/* =========================================
+   4. FOOTER SECTION
+   ========================================= */
+.footer {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.footer-logo img {
+    height: 70px;
+    margin-bottom: 40px;
+}
+
+.footer-links {
+    margin-bottom: 30px;
+    display: flex;            
+    justify-content: center;   
+    flex-wrap: wrap;          
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: rgb(64, 97, 99);
+    margin: 0 20px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.gold-link {
+    color: #a67c52 !important;
+}
+
+.social-icons {
+    margin-bottom: 40px;
+}
+
+.social-icons a {
+    color: #a67c52;
+    font-size: 20px;
+    margin: 0 15px;
+}
+
+.copyright {
+    color: rgb(64, 97, 99);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 2.3;
+    border-top: 1px solid rgb(200, 207, 207);
+    padding-top: 30px;
+}
+
+.footer-links a:hover {
+    color: rgb(169, 121, 89);
+    transition: 0.2s;
+}
+
+.social-icons a :hover {
+    color: rgb(64, 97, 99);
+    transition: 0.03s;
+}
+
+/* --- Responsive Code for Footer --- */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column; 
+        align-items: center;    
+    }
+
+    .footer-links a {
+        margin: 10px 0;        
+        width: 100%;           
+    }
+
+    .footer {
+        padding: 50px 0;       
+    }
+}
+
+/* llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll */
+
+    .add-tocart-button {
+            height: 28px;
+            width: 123px;
+
+
+        }
+
+        .button-tag-addtocart {
+            background-color: rgba(15, 15, 15, 0.888);
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            color: white;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        .add-to-cart-section {
+            position: fixed;
+            background-color: rgb(255, 255, 255);
+            height: 100vh;
+            width: 440px;
+            right: 0px;
+            top: 0;
+        }
+
+
+        .shopping-cart-div-cross {
+            border-bottom: 1px solid #d5d5d5;
+            padding: 0px 20px;
+            font-size: 18px;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            height: 58px;
+        }
+        .img-tag-atc{
+           height: 100%;
+           width: 100%;
+        }
+        .card-section-of-addtocart{
+                margin: 42px 20px 16px 26px;
+                        gap: 22px;
+    flex-direction: column;
+    display: flex;
+    height: 58vh;
+     max-width: 64vh;
+      overflow-y: auto;
+    
+            }
+        .card-add-to-cart-section{
+           display: flex;
+           height: 65px;
+    justify-content: space-between;
+        }
+        .card-img-plus-quatitty-atc{
+            display: flex;
+                gap: 15px;
+        }
+        .quantity-atc{
+            display: flex;
+        }
+        .name-quantity-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            
+        }
+        .img-atc-div{
+                width: 67px;
+    height: 64px;
+        }
+        .crosssign-atc{
+            display: flex;
+    align-items: center;
+    justify-content: end;
+        }
+        .box-atc{
+                width: 38px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border: 1px solid rgb(223 223 223);
+        }
+        .cross-sign-plus-price{
+            display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+        }
+        .subtotal-order-button-atc{
+               margin: 21px 1px 16px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+        }
+        .subtotal-atc{
+                padding: 0px 24px;
+                height: 42px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    border: 1px solid;
+    align-items: center;
+        }
+        .button-place-order{
+            height: 50px;
+        }
+        .button-tag-place-order{
+            font-size: 23px;
+    border-radius: 9px;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: #54595F;
+    height: 100%;
+    width: 100%;
+        }
+        .hide-add-cart-toggle{
+            display: none;
+        }
+
+

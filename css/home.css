@@ -1,0 +1,1164 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+
+    background-color: #f9f7f2;
+    overflow-x: hidden;
+}
+
+/* ------------------------------------------------------------------------------------------------ */
+
+   /*  header section  */
+
+   /* =========================================
+   2. HEADER, NAVBAR & HERO
+   ========================================= */
+#main-hero-area {
+    width: 100%;
+    background-image: url("../images/bg-00011 (2).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 3%;
+    width: 100%;
+    z-index: 1000;
+    margin-bottom: -60px;
+}
+
+.nav-left {
+    display: flex;
+    gap: 25px;
+    flex: 1;
+}
+
+.nav-left a {
+    position: relative;
+    text-decoration: none;
+    color: #1a2a33;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    padding: 30px 0;
+    transition: 1s;
+}
+
+.nav-left a.active {
+    color: #c18b60;
+}
+
+.nav-left a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #c18b60;
+    transition: 0.3s;
+}
+
+.nav-left a:hover::before {
+    width: 100%;
+}
+.nav-left a:hover {
+    color: #c18b60;
+}
+
+.logo-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-area img {
+    height: 90px;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-res {
+    background-color: #c7823d;
+    color: white;
+    border: none;
+    padding: 18px 32px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.nav-right .btn-res:hover {
+    background-color: #80501d;
+    transition: 2s;
+}
+
+.hero-section {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.cursive-text {
+    font-family: 'Alex Brush', cursive;
+    color: rgb(169, 121, 89);
+    font-size: 41px;
+    font-weight: 500;
+    margin-bottom: -40px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.main-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 137px;
+    font-weight: 500;
+    color: rgb(20, 54, 66);
+    letter-spacing: 45px;
+    margin-left: 15px;
+}
+
+.menu-checkbox,
+.hamburger {
+    display: none;
+}
+
+/* --- Responsive Code for Navbar & Hero --- */
+@media (max-width: 992px) {
+
+    /* navbar center align — logo only */
+    .navbar {
+        position: relative;
+        padding: 15px 30px;
+        justify-content: center;
+    }
+
+    /* hide reservation button */
+    .nav-right {
+        display: none;
+    }
+
+    /* ===== MENU OVERLAY LIKE FLAVIO DEMO ===== */
+    .nav-left {
+        position: absolute;
+        top: 140px;              /* hamburger ke neeche */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;              /* menu container width */
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 0;
+        border-radius: 6px;
+        gap: 25px;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    }
+
+    .menu-checkbox:checked ~ .nav-left {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* ===== HAMBURGER NEXT TO LOGO AREA ===== */
+    .hero-section {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        position: absolute;
+        top: 70px;         /* adjust: 60-75 is perfect */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+        background: #1a2a33;
+    }
+
+    /* hero title responsive */
+    .main-title {
+        font-size: 60px;
+        letter-spacing: 15px;
+    }
+}
+
+/* --- Hamburger Button Design (Image Jaisa) --- */
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        
+        /* Positioning (Logo ke neeche center mein) */
+        position: absolute;
+        top: 85px; /* Thoda adjust kiya taki logo se chipke nahi */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+
+        /* Circle Styling */
+        width: 50px;
+        height: 50px;
+        background-color: #c18b60; /* Brown Color */
+        border-radius: 50%; /* Golakar shape */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Halki si shadow */
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .hamburger:hover {
+        background-color: #a06e45; /* Hover pr thoda dark */
+    }
+
+    .hamburger span {
+        width: 22px; /* Lines ki choudai adjust ki circle ke hisab se */
+        height: 2px;
+        background-color: #ffffff; /* White Color Lines */
+        border-radius: 2px;
+    }
+}
+
+
+/* fonder section */
+/* ------------------------------------------------------------------------------------------------ */
+  
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1500px;
+    margin: 2px;
+    padding: 0;
+     border: 1px solid rgb(177, 176, 176); 
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    background-color: rgb(238, 237, 237);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    /* margin-top: 50px;  */
+}
+
+
+.text-section {
+    padding: 80px 60px;
+    position: relative;
+    background: linear-gradient(135deg, #fdfcfb 0%, #f7f4ef 100%);
+}
+
+.text-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #d4c5b0 20%, #d4c5b0 80%, transparent);
+}
+
+
+.founder-title {
+    font-family: "Bebas Neue", display;
+    font-size: 68px;
+    font-weight: 500;
+    line-height: 89px;
+    color: #143642;
+    margin-bottom: 40px;
+    letter-spacing: 8px;
+
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a4a4a;
+    /* margin-bottom: 60px; */
+
+}
+
+.quote-box {
+    padding-top: 30px;
+    margin-top: 40px;
+   
+}
+.quote-box button{
+    background-color: #a15f3e;
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 18px 32px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 13px;
+}
+.quote-box button:hover{
+    background-color: #9b8073;
+    transition: 2s;
+}
+ 
+.image-section {
+    position: relative;
+    width: 100%;
+    height: 95%;
+    /* background-color: rgb(216, 206, 206); */
+    overflow: visible;
+    /* border: 1px solid rgb(198, 189, 189); */
+    /* padding: 40px ; */
+    margin-top: 20px;
+     
+}
+.building-img {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    left: 1px;
+    width: 100%;
+    height: 99%;
+    object-fit: cover;
+    z-index: 1;
+   
+}
+.portrait-img {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    width: 70%;
+    height: 95%;
+    object-fit: cover;
+    z-index: 2;
+   
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-section {
+        min-height: 500px;
+    }
+
+    .floating-btn {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-section {
+        padding: 50px 30px;
+    }
+
+    .main-title {
+        font-size: 48px;
+    }
+
+    .image-section {
+        grid-template-columns: 1fr;
+        min-height: 600px;
+    }
+}
+/* ------------------------------------------------------------------------------------------------ */
+  /* history section  */
+
+  .history-section {
+    position: relative;
+    width: 100%;
+    min-height: 550px;
+    background-image: linear-gradient(rgba(211, 165, 169, 0.5), rgba(211, 165, 169, 0.5)), url("../images/bg-0002.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+}
+
+.history-container {
+    max-width: 1200px;
+    margin: 0 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    padding: 0 5%;
+}
+
+/* Left Side Styling */
+.history-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.history-left .line {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-bottom: 20px;
+}
+
+.history-left .start-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: rgb(20, 54, 66);
+    font-weight: 500;
+}
+
+/* Right Side Styling */
+.since-text {
+    font-family: 'Alex Brush', cursive;
+    color: #143642;
+    font-size: 41px;
+    margin-top: -40px;
+    margin-bottom: 30px;
+}
+
+.history-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 68px;
+    letter-spacing: 8px;
+    color: #143642;
+    font-weight: 500;
+    /* margin-bottom: 60px; */
+    line-height: 1;
+}
+
+.history-description {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    line-height: 31px;
+    color: #143642;
+    font-weight: 500;
+    text-align: start;
+    
+    margin-top: 60px;
+    margin-bottom: 40px;
+     max-width: 800px; 
+    text-transform: uppercase; /* Image mein text uppercase hai */
+}
+
+.history-btn {
+    background-color: #a67c52;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.history-btn:hover {
+    background-color: #8b6643;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .history-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .history-left {
+        display: none; /* Mobile par line hata sakte hain clean look ke liye */
+    }
+    
+    .history-title {
+        font-size: 50px;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------- */
+/* images section */
+
+/* --- SECTION 1: MENU GRID --- */
+.menu-grid-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    min-height: 400px;
+    padding: 10px;
+    gap: 30px;
+}
+
+.menu-card {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+    background-size: cover;
+    background-position: center;
+}
+ 
+.dining { background-image: url('../images/bg-004.jpg'); }
+.dessert { background-image: url('../images/bg-005.jpg'); }
+
+.explore {
+    background-color: #143642; /* Dark Greenish Blue from image */
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    text-align: end;
+    color: white;
+}
+
+.card-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.explore-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 60px;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    text-align: end;
+}
+
+.explore-desc {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 300px;
+     
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.explore-btn {
+    background-color: #a67c52;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+ 
+/* section 2  */
+
+
+.container2 {
+    position: relative;
+    z-index: 2;
+    max-width: 1500px;
+    margin: 0px;
+    padding: 0;
+    border: 1px solid rgb(177, 176, 176); 
+}
+
+.content-grid2{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    background-color: rgb(238, 237, 237);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    /* margin-top: 50px;  */
+    margin-top: 0;
+}
+
+
+.text-section2 {
+    padding: 80px 60px;
+    position: relative;
+    background: linear-gradient(135deg, #fdfcfb 0%, #f7f4ef 100%);
+}
+
+.text-section2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #d4c5b0 20%, #d4c5b0 80%, transparent);
+}
+
+
+.founder-title2 {
+    font-family: "Bebas Neue", display;
+    font-size: 68px;
+    font-weight: 500;
+    line-height: 89px;
+    color: #143642;
+    margin-bottom: 40px;
+    letter-spacing: 8px;
+
+}
+
+.description2 {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a4a4a;
+     margin-bottom: 60px;  
+
+}
+.image-section2 {
+    position: relative;
+    width: 100%;
+    height: 99%;
+    /* background-color: rgb(216, 206, 206); */
+    overflow: visible;
+    /* border: 1px solid rgb(198, 189, 189); */
+    /* padding: 40px ; */
+    margin-top: -5px;
+     
+}
+.building-img2 {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    left: 1px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+   
+} 
+
+/* Overlap Box Style */
+.overlapform {
+    position: absolute;
+    top: 50%;
+    right: 5px; 
+    transform: translateY(-50%);
+    width: 49%;
+    min-height: auto;
+    background: #143642;  
+    padding: 2px 35px;
+    color: white;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Menu Items Styling */
+ 
+.menu-item {
+    margin-top: 20px;
+    margin-bottom: 30px; 
+    padding-bottom: 10px;
+}
+
+.item-header {
+    display: flex;
+    align-items: baseline;  
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+
+.item-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 33px;
+    color: white;
+    white-space: nowrap;  
+    display: flex;
+    flex: 1;  
+    align-items: baseline;
+}
+.item-name:hover{
+    color: #a97959;
+    transition: 0.1s;
+}
+ 
+.item-name::after {
+    content: "";
+    flex: 1;
+    margin: 0 10px; 
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.4); 
+    height: 1px;
+}
+
+/* Price Styling */
+.item-price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    color: #a67c52;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Description Styling */
+.item-details {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #ffffffad;
+    line-height: 28px;
+    text-transform: lowercase;
+    margin-top: 5px;
+    display: block;
+}
+/* =======================================================
+   TABLET & MOBILE RESPONSIVENESS (UPDATED)
+   ======================================================= */
+
+/* NOTE: Maine yahan 992px ko badha kar 1024px kar diya hai 
+   taaki Tablet (iPad) par bhi ye sahi dikhe */
+@media (max-width: 1024px) {
+
+    /* --- 1. FOUNDER / ABOUT SECTION (White Box) --- */
+    .content-grid {
+        grid-template-columns: 1fr; /* Ek ke neeche ek */
+        box-shadow: none; /* Shadow hata di clean look ke liye */
+        margin: 0;
+    }
+
+    .text-section {
+        padding: 60px 20px;
+        text-align: center; /* Text center */
+        order: 2; /* Text neeche */
+    }
+
+    /* Vertical line hatana mobile par */
+    .text-section::after {
+        display: none;
+    }
+
+    .image-section {
+        order: 1; /* Image upar */
+        min-height: 400px; /* Height fix */
+        margin-top: 0;
+    }
+
+    .portrait-img {
+        width: 80%;
+        right: 10%; /* Center alignment */
+        top: 20px;
+    }
+
+    .founder-title {
+        font-size: 50px;
+        line-height: 1.1;
+        letter-spacing: 3px;
+    }
+
+    /* --- 2. HISTORY SECTION (Beige Background) --- */
+    .history-container {
+        grid-template-columns: 1fr; /* Stack layout */
+        text-align: center; /* Sab kuch center */
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .history-left {
+        display: none; /* Line hide kar di */
+    }
+
+    .since-text {
+        margin-top: 0;
+        font-size: 35px;
+    }
+
+    .history-title {
+        font-size: 48px;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+    }
+
+    .history-description {
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    /* --- 3. MENU IMAGES GRID (Dining / Dessert Cards) --- */
+    .menu-grid-section {
+        grid-template-columns: 1fr; /* Ek column */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .menu-card {
+        height: 450px;
+        background-attachment: scroll;
+    }
+
+    .explore-title {
+        text-align: center;
+        font-size: 45px;
+    }
+
+    .explore {
+        align-items: center;
+        text-align: center;
+    }
+
+    .explore-desc {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* --- 4. SECTION 2 & OVERLAP FORM (FIXED) --- */
+    /* Is section me maine changes kiye hain taaki text na chhupe */
+    
+    .content-grid2 {
+        display: flex; /* Grid hata kar Flex use kiya */
+        flex-direction: column; /* Sab ek ke neeche ek */
+        margin-top: 0;
+        box-shadow: none;
+    }
+
+    .image-section2 {
+        order: 1; /* 1. Image Sabse Upar */
+        height: 350px; /* Height fix ki */
+        width: 100%;
+    }
+
+    .overlapform {
+        order: 2; /* 2. Form Beech Mein */
+        position: relative; /* Absolute hataya taaki jagah ghere */
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 100%;
+        margin: 0;
+        padding: 40px 20px;
+        background-color: #143642; /* Dark BG */
+        box-shadow: none;
+        z-index: 5;
+    }
+
+    .text-section2 {
+        order: 3; /* 3. Text Sabse Neeche */
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #f9f7f2; /* Background color safe side ke liye */
+    }
+
+    .text-section2::after {
+        display: none;
+    }
+}
+
+
+/* -------------------------------------------------------------------------------------------- */
+/*  Booking section  */
+
+.booking-section {
+    position: relative;
+    padding: 60px 0;
+
+    background-image: url("../images/bg-0008.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.booking-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.booking-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 68px;
+    letter-spacing: 10px;
+    color: rgb(20, 54, 66);
+    font-weight: 500;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group input,
+.input-group select {
+    width: 75%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    outline: none;
+    color: rgb(20, 54, 66);
+    appearance: none;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-bottom: 1px solid rgb(169, 121, 89) !important;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input,
+.input-group select {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease;
+}
+
+.input-group select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+}
+
+.input-group ::placeholder {
+    color: rgb(20, 54, 66) !important;
+    font-weight: 500;
+
+}
+
+.book-btn {
+    background-color: #a67c52;
+    color: white;
+    border: none;
+    padding: 18px 45px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    width: fit-content;
+    margin: 10px auto 0;
+    transition: 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #8b6643;
+}
+
+/* Tablet aur Mobile ke liye (992px se niche) */
+@media (max-width: 992px) {
+    .booking-title {
+        font-size: 50px;
+        letter-spacing: 5px; 
+    }
+
+    .input-group input, 
+    .input-group select {
+        width: 90%; 
+    }
+}
+
+/* Chhote Mobile ke liye (600px se niche) */
+@media (max-width: 600px) {
+    .booking-section {
+        padding: 40px 0;
+        background-attachment: scroll; 
+    }
+
+    .booking-title {
+        font-size: 35px;
+        letter-spacing: 3px;
+        line-height: 1.2;
+    }
+
+    .cursive-text {
+        font-size: 30px; 
+    }
+
+    .input-group input, 
+    .input-group select {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .book-btn {
+        width: 100%; 
+        padding: 15px 0;
+    }
+}
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------ */
+
+/*   footer section  */
+
+.footer {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.footer-logo img {
+    height: 70px;
+    margin-bottom: 40px;
+}
+
+.footer-links {
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: rgb(64, 97, 99);
+    margin: 0 20px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.gold-link {
+    color: #a67c52 !important;
+}
+
+.social-icons {
+    margin-bottom: 40px;
+}
+
+.social-icons a {
+    color: #a67c52;
+    font-size: 20px;
+    margin: 0 15px;
+}
+
+.copyright {
+    color: rgb(64, 97, 99);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 2.3;
+    border-top: 1px solid rgb(200, 207, 207);
+    padding-top: 30px;
+}
+
+.footer-links a:hover {
+    color: rgb(169, 121, 89);
+    transition: 0.2s;
+}
+
+.social-icons a :hover {
+    color: rgb(64, 97, 99);
+    transition: 0.03s;
+}
+
+/* @media (max-width: 992px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #1a2a33;
+    }
+
+    .nav-left {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 280px;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        z-index: 1000;
+    }
+
+    .menu-checkbox:checked~.nav-left {
+        left: 0;
+    }
+
+    .nav-right {
+        display: none;
+    }
+
+    .main-title {
+        font-size: 60px;
+        letter-spacing: 15px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .form-wrapper {
+        width: 100%;
+    }
+
+    .overlap-form {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .side-img {
+        display: none;
+    }
+
+    .form-wrapper {
+        flex: none;
+        width: 100%;
+    }
+} */
